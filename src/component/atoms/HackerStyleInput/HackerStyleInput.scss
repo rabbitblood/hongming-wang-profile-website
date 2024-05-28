@@ -1,0 +1,24 @@
+.hacker-style-input-container {
+  position: relative;
+  .hacker-style-input {
+    background-color: var(--primary-color-dark-solid);
+    border: 2px solid var(--secondary-color);
+    padding: 0 0.5rem;
+    padding-right: 4rem;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+
+  .input-unit {
+    right: 2px;
+    position: absolute;
+    color: var(--secondary-color);
+    background-color: var(--primary-color-dark-solid);
+    height: calc(100% - 4px);
+    top: 2px;
+    padding: 0 0.5rem;
+  }
+}

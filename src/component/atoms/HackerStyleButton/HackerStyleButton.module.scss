@@ -1,0 +1,86 @@
+$height: 3rem;
+$width: 6rem;
+$border-width: 0.2rem;
+$padding: 1rem;
+
+.hacker-style-button-container {
+  position: relative;
+  height: $height;
+  width: $width;
+  cursor: pointer;
+  text-align: center;
+
+  &.solid {
+    .svg-bg {
+      fill: var(--primary-color-dark-solid);
+      stroke: var(--secondary-color);
+    }
+  }
+
+  &.transparent {
+    .svg-bg {
+      fill: transparent;
+      stroke: var(--secondary-color);
+    }
+  }
+
+  &.half-transparent {
+    .svg-bg {
+      fill: var(--primary-color-dark);
+      stroke: var(--secondary-color);
+      opacity: 0.5;
+    }
+  }
+
+  .button-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $height;
+    width: $width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding;
+  }
+
+  .svg-bg {
+    position: absolute;
+    top: 0;
+    left: -$padding;
+    height: $height;
+    width: calc(#{$width} + #{$padding} * 2);
+    object-fit: fill;
+    stroke-width: 2;
+    stroke: var(--secondary-color);
+    fill: var(--primary-color-dark);
+    z-index: -1;
+    transition-duration: 1s;
+  }
+
+  &:hover .svg-bg {
+    fill: url("#myGradient");
+    stroke: var(--primary-color);
+  }
+
+  &:active .svg-bg {
+    fill: var(--secondary-color);
+    stroke: var(--secondary-color);
+  }
+
+  &.margin-none {
+    margin: $padding 0;
+  }
+
+  &.margin-half {
+    margin: $padding calc($padding / 2);
+  }
+
+  &.margin-full {
+    margin: $padding $padding;
+  }
+
+  &.margin-extra {
+    margin: $padding calc($padding * 2);
+  }
+}

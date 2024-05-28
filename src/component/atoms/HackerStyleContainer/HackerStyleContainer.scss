@@ -1,0 +1,24 @@
+.hacker-style-container {
+  padding: 1rem;
+  background-color: var(--primary-color-dark);
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.half-transparent {
+    background-color: var(--primary-color-dark);
+  }
+
+  &.solid {
+    background-color: var(--primary-color-dark-solid);
+  }
+}

@@ -1,0 +1,66 @@
+.hacker-style-button-container {
+  position: relative;
+  height: 3rem;
+  width: 6rem;
+  cursor: pointer;
+  text-align: center;
+}
+.hacker-style-button-container.solid .svg-bg {
+  fill: var(--primary-color-dark-solid);
+  stroke: var(--secondary-color);
+}
+.hacker-style-button-container.transparent .svg-bg {
+  fill: transparent;
+  stroke: var(--secondary-color);
+}
+.hacker-style-button-container.half-transparent .svg-bg {
+  fill: var(--primary-color-dark);
+  stroke: var(--secondary-color);
+  opacity: 0.5;
+}
+.hacker-style-button-container .button-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.hacker-style-button-container .svg-bg {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  height: 3rem;
+  width: calc(6rem + 1rem * 2);
+  object-fit: fill;
+  stroke-width: 2;
+  stroke: var(--secondary-color);
+  fill: var(--primary-color-dark);
+  z-index: -1;
+  transition-duration: 1s;
+}
+.hacker-style-button-container:hover .svg-bg {
+  fill: url("#myGradient");
+  stroke: var(--primary-color);
+}
+.hacker-style-button-container:active .svg-bg {
+  fill: var(--secondary-color);
+  stroke: var(--secondary-color);
+}
+.hacker-style-button-container.margin-none {
+  margin: 1rem 0;
+}
+.hacker-style-button-container.margin-half {
+  margin: 1rem 0.5rem;
+}
+.hacker-style-button-container.margin-full {
+  margin: 1rem 1rem;
+}
+.hacker-style-button-container.margin-extra {
+  margin: 1rem 2rem;
+}
+
+/*# sourceMappingURL=HackerStyleButton.module.css.map */
