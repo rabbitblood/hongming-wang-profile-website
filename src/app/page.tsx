@@ -1,6 +1,13 @@
+import dynamic from "next/dynamic";
 import "./home.css";
 
-import My3dModel from "../component/atoms/My3dModel/My3dModel";
+//import My3dModel from "../component/atoms/My3dModel/My3dModel";
+const My3dModel = dynamic(
+  () => import("../component/atoms/My3dModel/My3dModel"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
