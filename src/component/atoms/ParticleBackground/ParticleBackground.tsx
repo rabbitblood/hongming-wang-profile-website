@@ -1,13 +1,11 @@
 "use client";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { Geometry } from "three/examples/jsm/deprecated/Geometry.js";
 import whiteCircle from "@/assets/white-circle.svg";
-import { use, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ParticleBackground() {
   const whiteCircleTexture = new THREE.TextureLoader().load(whiteCircle.src);
-
   const particleVertexs = useRef<THREE.BufferAttribute>(null);
 
   //vertexs doing circular motion
