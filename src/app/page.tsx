@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import "./home.css";
 
+// three.js and react-three-fiber are not supported in server-side rendering
 const ParticleBackground = dynamic(
   () => import("../component/atoms/ParticleBackground/ParticleBackground"),
   {
@@ -17,61 +18,48 @@ const My3dModel = dynamic(
 export default function Home() {
   return (
     <main>
+      <div id="background-particle-effect">
+        <ParticleBackground
+          style={{
+            position: "fixed",
+            height: "100%",
+            width: "100%",
+            zIndex: -1,
+          }}
+          particleAmount={1000}
+          color="blue"
+        />{" "}
+        <ParticleBackground
+          style={{
+            position: "fixed",
+            height: "100%",
+            width: "100%",
+            zIndex: -1,
+          }}
+          particleAmount={1000}
+          color="red"
+        />{" "}
+        <ParticleBackground
+          style={{
+            position: "fixed",
+            height: "100%",
+            width: "100%",
+            zIndex: -1,
+          }}
+          particleAmount={1000}
+          color="white"
+        />
+      </div>
       <div className="home-page">
         <div className="banner">
           <div className="text-section">
             <h1 className="title">Hongming Wang</h1>
-            <h2 className="sub-title">Game/Web Dev</h2>
+            <h1 className="sub-title">Game/Web Dev</h1>
           </div>
           <My3dModel />
-          <ParticleBackground
-            style={{
-              position: "fixed",
-              height: "100%",
-              width: "100%",
-              zIndex: -1,
-            }}
-            particleAmount={1000}
-            color="blue"
-          />{" "}
-          <ParticleBackground
-            style={{
-              position: "fixed",
-              height: "100%",
-              width: "100%",
-              zIndex: -1,
-            }}
-            particleAmount={1000}
-            color="red"
-          />{" "}
-          <ParticleBackground
-            style={{
-              position: "fixed",
-              height: "100%",
-              width: "100%",
-              zIndex: -1,
-            }}
-            particleAmount={1000}
-            color="white"
-          />
         </div>
+        <div>hi</div>
       </div>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
-      <h1>2232323</h1>
     </main>
   );
 }
