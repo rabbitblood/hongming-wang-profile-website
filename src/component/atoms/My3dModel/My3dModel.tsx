@@ -91,9 +91,9 @@ export default function My3dModel() {
         const d = Math.sqrt(dx * dx + dy * dy);
 
         //pushes the vertice away based on the distance
-        const pushFactor = 0.1;
-        array[i] += dx * pushFactor;
-        array[i + 1] += dy * pushFactor;
+        const pushFactor = 0.0001;
+        array[i] += (1 / dx) * pushFactor;
+        array[i + 1] += (1 / dy) * pushFactor;
       }
       position.needsUpdate = true;
     }
