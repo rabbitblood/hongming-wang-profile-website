@@ -4,7 +4,18 @@ import { Canvas } from "@react-three/fiber";
 import whiteCircle from "@/assets/white-circle.svg";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function ParticleBackground() {
+interface ParticleBackgroundProps {
+  particleAmount?: number;
+  color?: string;
+  style?: React.CSSProperties;
+}
+
+export default function ParticleBackground({
+  particleAmount = 10000,
+  color = "white",
+  style,
+  ...props
+}: ParticleBackgroundProps) {
   const whiteCircleTexture = new THREE.TextureLoader().load(whiteCircle.src);
   const particleVertexs = useRef<THREE.BufferAttribute>(null);
   const [vertexs, setVertexs] = useState(particleVertexs.current);
@@ -37,14 +48,7 @@ export default function ParticleBackground() {
   }, [vertexs]);
 
   return (
-    <Canvas
-      style={{
-        position: "fixed",
-        height: "100%",
-        width: "100%",
-        zIndex: -1,
-      }}
-    >
+    <Canvas style={style}>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <points>
@@ -55,14 +59,14 @@ export default function ParticleBackground() {
               setVertexs(particleVertexs);
             }}
             attach={"attributes-position"}
-            count={10000}
-            array={new Float32Array(10000 * 3).map(
+            count={particleAmount}
+            array={new Float32Array(particleAmount * 3).map(
               () => (Math.random() - 0.5) * 10
             )}
             itemSize={3}
           />
         </bufferGeometry>
-        <pointsMaterial size={0.01} color="white" map={whiteCircleTexture} />
+        <pointsMaterial size={0.01} color={color} map={whiteCircleTexture} />
       </points>
     </Canvas>
   );

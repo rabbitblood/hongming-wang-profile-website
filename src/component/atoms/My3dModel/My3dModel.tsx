@@ -35,7 +35,7 @@ export default function My3dModel() {
   const [color, setColor] = useState({ r: 200, g: 200, b: 200 });
 
   const [MODEL_SPIN_DATA, SET_MODEL_SPIN_DATA] = useState({
-    MODEL_SPIN_SPEED: 0.0001,
+    MODEL_SPIN_SPEED: 0.001,
     MODEL_SPIN_MAX_Y: 0.5,
     MODEL_SPIN_MIN_Y: -0.5,
   });
@@ -103,7 +103,13 @@ export default function My3dModel() {
       camera.current.position.y = Math.sin(mousePos.y) * 0.1;
       camera.current.lookAt(model.current.position);
     }
-  }, [aspectRatio, isMobile, mousePos, originalModelVertices]);
+  }, [
+    aspectRatio,
+    isMobile,
+    mousePos,
+    originalModelVertices,
+    model.current?.rotation.y,
+  ]);
 
   useEffect(() => {
     if (camera.current && model.current) {
