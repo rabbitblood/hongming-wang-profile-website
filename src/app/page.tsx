@@ -1,8 +1,12 @@
 import dynamic from "next/dynamic";
 import "./home.css";
 
-import ParticleBackground from "@/component/atoms/ParticleBackground/ParticleBackground";
-
+const ParticleBackground = dynamic(
+  () => import("../component/atoms/ParticleBackground/ParticleBackground"),
+  {
+    ssr: false,
+  }
+);
 const My3dModel = dynamic(
   () => import("../component/atoms/My3dModel/My3dModel"),
   {
