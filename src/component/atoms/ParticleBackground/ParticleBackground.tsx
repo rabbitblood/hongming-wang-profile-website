@@ -22,8 +22,6 @@ export default function ParticleBackground({
 
   //vertexs doing circular motion
   useEffect(() => {
-    console.log("vertexs", vertexs);
-
     if (vertexs) {
       const interval = setInterval(() => {
         for (let i = 0; i < vertexs.array.length; i += 3) {
