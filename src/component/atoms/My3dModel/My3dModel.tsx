@@ -6,8 +6,13 @@ import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import { PerspectiveCamera } from "@react-three/drei";
 import useCheckMobileScreen from "@/hooks/useCheckMobile";
+import useAspectRatio from "@/hooks/useAspectRatio";
+
+const MIN_COLOR = 150;
+const MAX_COLOR = 255;
 
 export default function My3dModel() {
+  const aspectRatio = useAspectRatio();
   const isMobile = useCheckMobileScreen();
   const modelobj = useLoader(PLYLoader, myModel);
   const model =
@@ -27,7 +32,7 @@ export default function My3dModel() {
   //get mouse pose percentage related to the browser window
   //and set the camera rotation based on the mouse position
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [color, setColor] = useState({ r: 125, g: 125, b: 125 });
+  const [color, setColor] = useState({ r: 200, g: 200, b: 200 });
 
   const [MODEL_SPIN_DATA, SET_MODEL_SPIN_DATA] = useState({
     MODEL_SPIN_SPEED: 0.0001,
@@ -62,12 +67,11 @@ export default function My3dModel() {
       camera.current.position.x = -Math.sin(mousePos.x) * 0.1;
       camera.current.position.y = Math.sin(mousePos.y) * 0.1;
       camera.current.lookAt(model.current.position);
-
-      const positionOffset = Math.min(0.2, window.innerWidth * 0.0001 + 0.1);
-
-      if (window.innerWidth > 768) {
-        camera.current.position.x -= positionOffset;
-      }
+      camera.current.position.x -= Math.min(
+        0.2,
+        window.innerWidth * 0.0001 + 0.1
+      );
+      camera.current.updateMatrixWorld();
 
       //model vertex move based on mouse position
       //console.log(model.current.geometry.attributes);
@@ -84,20 +88,28 @@ export default function My3dModel() {
         const screenPos = worldPos.project(camera.current);
         const x = (screenPos.x + 1) / 2;
         const y = (1 - screenPos.y) / 2;
-
         //get mouse distance to the vertice
-        const dx = x - (mousePos.x - positionOffset);
+        const dx = x - mousePos.x;
         const dy = y - mousePos.y;
-        const d = Math.sqrt(dx * dx + dy * dy);
+
+        const d = Math.sqrt(dx * dx + (dy * dy) / aspectRatio / aspectRatio);
 
         //pushes the vertice away based on the distance
-        const pushFactor = 0.0001;
-        array[i] += (1 / dx) * pushFactor;
-        array[i + 1] += (1 / dy) * pushFactor;
+        if (d < 0.05 / aspectRatio) {
+          const pushFactor = 0.5;
+
+          array[i] += Math.sqrt(Math.sqrt((1 / d) * pushFactor)) * dx;
+          array[i + 1] += (Math.sqrt((1 / d) * pushFactor) * dy) / aspectRatio;
+        }
       }
+
       position.needsUpdate = true;
+    } else if (isMobile && camera.current && model.current) {
+      camera.current.position.x = -Math.sin(mousePos.x) * 0.1;
+      camera.current.position.y = Math.sin(mousePos.y) * 0.1;
+      camera.current.lookAt(model.current.position);
     }
-  }, [isMobile, mousePos, originalModelVertices]);
+  }, [aspectRatio, isMobile, mousePos, originalModelVertices]);
 
   useEffect(() => {
     if (camera.current && model.current) {
@@ -142,9 +154,18 @@ export default function My3dModel() {
         }
 
         //model color
-        const r = Math.round(color.r + Math.random() * 2 - 1);
-        const g = Math.round(color.g + Math.random() * 2 - 1);
-        const b = Math.round(color.b + Math.random() * 2 - 1);
+        const r = Math.max(
+          Math.min(Math.round(color.r + Math.random() * 2 - 1), MIN_COLOR),
+          MAX_COLOR
+        );
+        const g = Math.max(
+          Math.min(Math.round(color.g + Math.random() * 2 - 1), MIN_COLOR),
+          MAX_COLOR
+        );
+        const b = Math.max(
+          Math.min(Math.round(color.b + Math.random() * 2 - 1), MIN_COLOR),
+          MAX_COLOR
+        );
         setColor({ r, g, b });
       });
     }, 1000 / 60);
