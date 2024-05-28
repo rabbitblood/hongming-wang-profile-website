@@ -2,38 +2,39 @@
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import whiteCircle from "@/assets/white-circle.svg";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function ParticleBackground() {
   const whiteCircleTexture = new THREE.TextureLoader().load(whiteCircle.src);
   const particleVertexs = useRef<THREE.BufferAttribute>(null);
+  const [vertexs, setVertexs] = useState(particleVertexs.current);
 
   //vertexs doing circular motion
   useEffect(() => {
-    setTimeout(() => {
-      const vertexs = particleVertexs.current;
-      if (vertexs) {
-        let i = 0;
-        const update = () => {
-          for (let i = 0; i < vertexs.array.length; i += 3) {
-            const x = vertexs.array[i];
-            const y = vertexs.array[i + 1];
-            const z = vertexs.array[i + 2];
+    console.log("vertexs", vertexs);
 
-            const angle = Math.atan2(z, x);
-            const radius = Math.sqrt(x * x + z * z);
-            vertexs.array[i] = Math.cos(angle + 0.01) * radius;
-            vertexs.array[i + 2] = Math.sin(angle + 0.01) * radius;
-          }
-          vertexs.needsUpdate = true;
-        };
-        const interval = setInterval(update, 1000 / 60);
-        return () => clearInterval(interval);
-      }
-    }, 100);
+    if (vertexs) {
+      const interval = setInterval(() => {
+        for (let i = 0; i < vertexs.array.length; i += 3) {
+          const x = vertexs.array[i];
+          const y = vertexs.array[i + 1];
+          const z = vertexs.array[i + 2];
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [particleVertexs.current]);
+          const radius = Math.sqrt(x * x + z * z);
+          const angle = Math.atan2(z, x);
+
+          vertexs.array[i] = radius * Math.cos(angle + 0.01);
+          vertexs.array[i + 1] = y;
+          vertexs.array[i + 2] = radius * Math.sin(angle + 0.01);
+        }
+        vertexs.needsUpdate = true;
+      }, 1000 / 60);
+
+      return () => clearInterval(interval);
+    } else {
+      console.error("particleVertexs.current is null");
+    }
+  }, [vertexs]);
 
   return (
     <Canvas
@@ -49,7 +50,10 @@ export default function ParticleBackground() {
       <points>
         <bufferGeometry>
           <bufferAttribute
-            ref={particleVertexs}
+            ref={(particleVertexs) => {
+              console.log(particleVertexs);
+              setVertexs(particleVertexs);
+            }}
             attach={"attributes-position"}
             count={10000}
             array={new Float32Array(10000 * 3).map(
