@@ -1,7 +1,9 @@
+@import "./../../HackerUIGlobal.scss";
+
 .hacker-style-container {
   padding: 1rem;
-  background-color: var(--primary-color-dark);
-  border: 2px solid var(--secondary-color);
+  background-color: $primaryColorDark;
+  border: 2px solid $secondaryColor;
   border-radius: 5px;
   margin: 1rem;
   display: flex;
@@ -15,10 +17,10 @@
   }
 
   &.half-transparent {
-    background-color: var(--primary-color-dark);
+    background-color: $primaryColorDark;
   }
 
   &.solid {
-    background-color: var(--primary-color-dark-solid);
+    background-color: $primaryColorDarkSolid;
   }
 }

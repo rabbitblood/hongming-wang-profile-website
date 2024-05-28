@@ -1,0 +1,11 @@
+.hacker-style-dropdown {
+  position: relative;
+
+  .drop-down-items-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 10;
+  }
+}

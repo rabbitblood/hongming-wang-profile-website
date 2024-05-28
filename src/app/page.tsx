@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import "./home.css";
 
+import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
+
 // three.js and react-three-fiber are not supported in server-side rendering
 const ParticleBackground = dynamic(
   () => import("../component/atoms/ParticleBackground/ParticleBackground"),
@@ -58,7 +60,9 @@ export default function Home() {
           </div>
           <My3dModel />
         </div>
-        <div>hi</div>
+        <HackerStyleContainer>
+          <div>hi</div>
+        </HackerStyleContainer>
       </div>
     </main>
   );
