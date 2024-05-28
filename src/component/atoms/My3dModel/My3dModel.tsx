@@ -48,16 +48,10 @@ export default function My3dModel() {
       });
     };
 
-    const onScroll = (event: WheelEvent) => {
-      setModelSize(1 + window.scrollY / 100);
-    };
-
-    window.addEventListener("wheel", onScroll);
     window.addEventListener("mousemove", onMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("wheel", onScroll);
     };
   }, []);
 
