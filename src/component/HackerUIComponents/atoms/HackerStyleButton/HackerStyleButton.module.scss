@@ -1,9 +1,12 @@
+@import "./../../HackerUIGlobal.scss";
+
 $height: 3rem;
 $width: 6rem;
 $border-width: 0.2rem;
-$padding: 1rem;
+$padding: 0.5rem;
 
 .hacker-style-button-container {
+  user-select: none;
   position: relative;
   height: $height;
   width: $width;
@@ -12,22 +15,22 @@ $padding: 1rem;
 
   &.solid {
     .svg-bg {
-      fill: var(--primary-color-dark-solid);
-      stroke: var(--secondary-color);
+      fill: $primaryColorSolid;
+      stroke: $primaryColorLightSolid;
     }
   }
 
   &.transparent {
     .svg-bg {
       fill: transparent;
-      stroke: var(--secondary-color);
+      stroke: $primaryColorLightSolid;
     }
   }
 
   &.half-transparent {
     .svg-bg {
-      fill: var(--primary-color-dark);
-      stroke: var(--secondary-color);
+      fill: $primaryColor;
+      stroke: $primaryColorLightSolid;
       opacity: 0.5;
     }
   }
@@ -52,20 +55,21 @@ $padding: 1rem;
     width: calc(#{$width} + #{$padding} * 2);
     object-fit: fill;
     stroke-width: 2;
-    stroke: var(--secondary-color);
-    fill: var(--primary-color-dark);
+    stroke: $primaryColorLightSolid;
+    fill: $primaryColorLightSolid;
     z-index: -1;
-    transition-duration: 1s;
+    transition-duration: 0.2s;
   }
 
   &:hover .svg-bg {
-    fill: url("#myGradient");
-    stroke: var(--primary-color);
+    fill: $primaryColorLight;
+    stroke: $primaryColor;
   }
 
-  &:active .svg-bg {
-    fill: var(--secondary-color);
-    stroke: var(--secondary-color);
+  &:active .svg-bg,
+  &.active .svg-bg {
+    fill: $primaryColor;
+    stroke: $primaryColor;
   }
 
   &.margin-none {

@@ -60,6 +60,7 @@ export interface HackerStyleButtonProps
   button_direction?: "normal" | "up" | "down";
   marginx?: "none" | "half" | "full" | "extra";
   bg?: "solid" | "half-transparent" | "transparent";
+  active?: boolean;
 }
 
 export default function HackerStyleButton({
@@ -67,6 +68,7 @@ export default function HackerStyleButton({
   marginx,
   button_direction,
   bg,
+  active,
   ...props
 }: HackerStyleButtonProps) {
   if (!button_direction) button_direction = "normal";
@@ -80,7 +82,8 @@ export default function HackerStyleButton({
         " " +
         style[`margin-${marginx}`] +
         " " +
-        style[bg]
+        style[bg] +
+        (active ? " " + style["active"] : "")
       }
       {...props}
     >

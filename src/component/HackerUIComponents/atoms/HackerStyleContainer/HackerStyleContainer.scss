@@ -2,9 +2,8 @@
 
 .hacker-style-container {
   padding: 1rem;
-  background-color: $primaryColorDark;
-  border: 2px solid $secondaryColor;
-  border-radius: 5px;
+  background-color: $primaryColor;
+  border: 2px solid $primaryColorLightSolid;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -17,10 +16,10 @@
   }
 
   &.half-transparent {
-    background-color: $primaryColorDark;
+    background-color: $primaryColor;
   }
 
   &.solid {
-    background-color: $primaryColorDarkSolid;
+    background-color: $primaryColorSolid;
   }
 }
