@@ -1,0 +1,26 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.message-container .message {
+  margin: 0.2rem;
+  max-width: 80%;
+}
+.message-container .message.left {
+  text-align: left;
+  justify-self: start;
+  align-self: flex-start;
+  border-radius: 1rem 1rem 1rem 0;
+  margin-right: 1rem;
+}
+.message-container .message.right {
+  border-color: white;
+  text-align: right;
+  justify-self: end;
+  align-self: flex-end;
+  border-radius: 1rem 1rem 0 1rem;
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=DialogueMessage.css.map */

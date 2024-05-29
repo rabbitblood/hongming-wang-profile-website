@@ -1,0 +1,26 @@
+#introduce-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100vh;
+}
+#introduce-section .display-tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  #introduce-section .display-tabs-container {
+    padding-left: 0.5rem;
+    justify-content: start;
+  }
+}
+#introduce-section .display-tabs-container .display-tab-button {
+  margin-bottom: 0;
+}
+#introduce-section .introduce-content-container {
+  margin: 0;
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=IntroduceSection.css.map */

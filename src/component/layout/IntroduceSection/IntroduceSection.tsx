@@ -1,5 +1,7 @@
 "use client";
 
+import "./IntroduceSection.css";
+
 import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
 import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import { useState } from "react";
@@ -24,7 +26,7 @@ export default function IntroduceSection() {
           button_direction="up"
           marginx="none"
           bg="transparent"
-          style={{ marginBottom: 0 }}
+          additionalClass="display-tab-button"
           active={introTab === "bio"}
           onClick={() => handleTabChange("bio")}
         >
@@ -34,7 +36,7 @@ export default function IntroduceSection() {
           button_direction="down"
           marginx="none"
           bg="transparent"
-          style={{ marginBottom: 0 }}
+          additionalClass="display-tab-button"
           active={introTab === "stack"}
           onClick={() => handleTabChange("stack")}
         >
@@ -44,14 +46,14 @@ export default function IntroduceSection() {
           button_direction="up"
           marginx="none"
           bg="transparent"
-          style={{ marginBottom: 0 }}
+          additionalClass="display-tab-button"
           active={introTab === "skill"}
           onClick={() => handleTabChange("skill")}
         >
           SKILL
         </HackerStyleButton>{" "}
       </div>
-      <HackerStyleContainer style={{ margin: 0, flexGrow: 1 }}>
+      <HackerStyleContainer additionalClass="introduce-content-container">
         {introTab === "bio" && <BIO />}
         {introTab === "stack" && <STACK />}
         {introTab === "skill" && <SKILL />}

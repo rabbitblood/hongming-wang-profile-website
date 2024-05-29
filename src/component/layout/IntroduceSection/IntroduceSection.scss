@@ -1,0 +1,25 @@
+#introduce-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100vh;
+
+  .display-tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 0.5rem;
+      justify-content: start;
+    }
+
+    .display-tab-button {
+      margin-bottom: 0;
+    }
+  }
+  .introduce-content-container {
+    margin: 0;
+    flex-grow: 1;
+  }
+}

@@ -60,6 +60,7 @@ export interface HackerStyleButtonProps
   button_direction?: "normal" | "up" | "down";
   marginx?: "none" | "half" | "full" | "extra";
   bg?: "solid" | "half-transparent" | "transparent";
+  additionalClass?: string;
   active?: boolean;
 }
 
@@ -69,6 +70,7 @@ export default function HackerStyleButton({
   button_direction,
   bg,
   active,
+  additionalClass,
   ...props
 }: HackerStyleButtonProps) {
   if (!button_direction) button_direction = "normal";
@@ -77,14 +79,9 @@ export default function HackerStyleButton({
 
   return (
     <div
-      className={
-        style["hacker-style-button-container"] +
-        " " +
-        style[`margin-${marginx}`] +
-        " " +
-        style[bg] +
-        (active ? " " + style["active"] : "")
-      }
+      className={`${style["hacker-style-button-container"]} ${
+        style[`margin-${marginx}`]
+      } ${style[bg]} ${active ? style["active"] : ""} ${additionalClass}`}
       {...props}
     >
       <div className={style["button-content"]}>{children}</div>
