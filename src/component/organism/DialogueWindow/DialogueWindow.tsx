@@ -3,42 +3,92 @@
 import "./DialogueWindow.css";
 
 import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
-import DialogueMessage from "./DialogueMessage/DialogueMessage";
+import DialogueMessage, {
+  DialogueMessageProps,
+} from "./DialogueMessage/DialogueMessage";
 import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
 import HackerDropDown from "@/component/HackerUIComponents/molecules/HackerDropDown/HackerDropDown";
 import { useEffect, useRef, useState } from "react";
-
-type MessageType = {
-  content: string;
-  position: "left" | "right";
-};
+import HackerStyleInput from "@/component/HackerUIComponents/atoms/HackerStyleInput/HackerStyleInput";
 
 export default function DialogueWindow() {
   const messageContainerRef = useRef<HTMLDivElement>(null);
-  const [messages, setMessages] = useState<MessageType[]>([]);
-
-  useEffect(() => {
-    handleNewMessage({
+  const [messages, setMessages] = useState<DialogueMessageProps[]>([
+    {
       content: `Hi, I'm Hongming Wang, a game/web developer. I have a passion
-            for creating games and websites that are both fun and engaging. I
-            have experience working with a variety of technologies, including
-            Unity, Unreal Engine, React, and Node.js. I'm always looking
-            for new challenges and opportunities to learn and grow as a
-            developer.`,
+          for creating games and websites that are both fun and engaging. I
+          have experience working with a variety of technologies, including
+          Unity, Unreal Engine, React, and Node.js. I'm always looking
+          for new challenges and opportunities to learn and grow as a
+          developer.`,
       position: "left",
+    },
+    {
+      content: `If you have any questions to ask, feel free to ask me!`,
+      position: "left",
+    },
+  ]);
+  const [inputMessage, setInputMessage] = useState<string>("");
+  const [GPTThreadID, setGPTThreadID] = useState<string>("");
+  const [canInput, setCanInput] = useState<boolean>(true);
+
+  const handleSendMessageButton = () => {
+    if (!inputMessage) return;
+    setCanInput(false);
+    setInputMessage("");
+
+    // user message
+    newMessage({
+      content: inputMessage,
+      position: "right",
+      timeBeforeShow: 600,
     });
-  }, []);
+    scrollToChatBottom();
 
-  const handleNewMessage = (message: MessageType) => {
-    setMessages([
-      ...messages,
-      {
-        content: message.content,
-        position: message.position,
-      },
-    ]);
+    setTimeout(() => {
+      // gpt message placeholder
+      newMessage({
+        content: "Thinking...",
+        position: "left",
+        timeBeforeShow: "infinity",
+      });
+      scrollToChatBottom();
 
-    // scroll to bottom
+      // gpt message
+      fetch("/api/hongming-gpt/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          threadId: GPTThreadID as string,
+          message: inputMessage,
+        }),
+      }).then((res) => {
+        res.json().then((data) => {
+          removeLastMessage();
+          newMessage({
+            content: data[0].text.value,
+            position: "left",
+          });
+          setCanInput(true);
+          scrollToChatBottom();
+        });
+      });
+    }, 500);
+  };
+
+  const newMessage = (message: DialogueMessageProps) => {
+    setMessages((prevMessages) => [...prevMessages, message]);
+  };
+
+  const removeLastMessage = () => {
+    setMessages((prevMessages) =>
+      prevMessages.slice(0, prevMessages.length - 1)
+    );
+  };
+
+  const scrollToChatBottom = () => {
     setTimeout(() => {
       if (messageContainerRef.current) {
         messageContainerRef.current.scrollTop =
@@ -48,25 +98,47 @@ export default function DialogueWindow() {
     }, 100);
   };
 
+  useEffect(() => {
+    // get thread
+    fetch("/api/hongming-gpt/new-thread").then((res) => {
+      res.json().then((data) => {
+        console.log(data);
+        setGPTThreadID(data);
+      });
+    });
+  }, []);
+
   return (
     <HackerStyleContainer additionalClass="dialogue-window">
       <div className="messages" ref={messageContainerRef}>
         {messages.map((message, index) => (
-          <DialogueMessage key={index} dialoguePosition={message.position}>
-            {message.content}
-          </DialogueMessage>
+          <DialogueMessage
+            key={index}
+            position={message.position}
+            content={message.content}
+            timeBeforeShow={message.timeBeforeShow}
+          />
         ))}
       </div>
       <div className="input-area">
+        <HackerStyleInput
+          onChange={(e) => {
+            setInputMessage(e.target.value);
+          }}
+          onBlur={(e) => {
+            setInputMessage(e.target.value);
+          }}
+          placeholder="Ask me something! like 'tell me about yourself'"
+          value={inputMessage}
+          disabled={!canInput}
+        />
         <HackerStyleButton
-          onClick={() =>
-            handleNewMessage({
-              content: "new message",
-              position: Math.random() > 0.5 ? "left" : "right",
-            })
-          }
+          onClick={() => {
+            canInput && handleSendMessageButton();
+          }}
+          disabled={!canInput}
         >
-          new message
+          Send Message
         </HackerStyleButton>
       </div>
     </HackerStyleContainer>

@@ -54,9 +54,9 @@ export default function IntroduceSection() {
         </HackerStyleButton>{" "}
       </div>
       <HackerStyleContainer additionalClass="introduce-content-container">
-        {introTab === "bio" && <BIO />}
-        {introTab === "stack" && <STACK />}
-        {introTab === "skill" && <SKILL />}
+        <BIO hide={introTab !== "bio"} />
+        <STACK hide={introTab !== "stack"} />
+        <SKILL hide={introTab !== "skill"} />
       </HackerStyleContainer>
     </div>
   );

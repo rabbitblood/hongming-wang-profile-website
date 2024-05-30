@@ -1,6 +1,10 @@
-export default function STACK() {
+interface STACKProps extends React.HTMLAttributes<HTMLDivElement> {
+  hide?: boolean;
+}
+
+export default function STACK(props: STACKProps) {
   return (
-    <div id="stack">
+    <div id="stack" className={`${props.hide ? "hide" : ""}`}>
       <div className="stack-container">
         <div className="stack-content">
           <h1 className="stack-title">STACK</h1>

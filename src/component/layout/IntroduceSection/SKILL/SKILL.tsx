@@ -1,6 +1,10 @@
-export default function SKILL() {
+interface SKILLProps extends React.HTMLAttributes<HTMLDivElement> {
+  hide?: boolean;
+}
+
+export default function SKILL(props: SKILLProps) {
   return (
-    <div id="skill">
+    <div id="skill" className={`${props.hide ? "hide" : ""}`}>
       <div className="skill-container">
         <div className="skill-content">
           <h1 className="skill-title">SKILL</h1>

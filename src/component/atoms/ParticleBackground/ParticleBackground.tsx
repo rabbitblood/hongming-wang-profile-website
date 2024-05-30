@@ -40,8 +40,6 @@ export default function ParticleBackground({
       }, 1000 / 60);
 
       return () => clearInterval(interval);
-    } else {
-      console.error("particleVertexs.current is null");
     }
   }, [vertexs]);
 
@@ -53,7 +51,6 @@ export default function ParticleBackground({
         <bufferGeometry>
           <bufferAttribute
             ref={(particleVertexs) => {
-              console.log(particleVertexs);
               setVertexs(particleVertexs);
             }}
             attach={"attributes-position"}

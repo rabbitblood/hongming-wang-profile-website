@@ -87,4 +87,13 @@ $padding: 0.5rem;
   &.margin-extra {
     margin: $padding calc($padding * 2);
   }
+
+  &.disabled {
+    color: $primaryColorLight;
+    cursor: not-allowed;
+    .svg-bg {
+      fill: $primaryColorDark;
+      stroke: $primaryColor;
+    }
+  }
 }

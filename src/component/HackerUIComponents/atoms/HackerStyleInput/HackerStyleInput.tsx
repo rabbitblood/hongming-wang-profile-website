@@ -13,15 +13,7 @@ export default function HackerStyleInput({
 }: HackerStyleInputProps) {
   return (
     <span className="hacker-style-input-container">
-      <input
-        className="hacker-style-input"
-        {...props}
-        onChange={(e) => {
-          if (valueHandler) {
-            valueHandler(e.target.value);
-          }
-        }}
-      />
+      <input className="hacker-style-input" {...props} />
       {inputUnit && <span className="input-unit">{inputUnit}</span>}
     </span>
   );

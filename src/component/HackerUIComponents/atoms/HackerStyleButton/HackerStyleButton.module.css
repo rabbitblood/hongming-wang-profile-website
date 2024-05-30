@@ -63,5 +63,13 @@
 .hacker-style-button-container.margin-extra {
   margin: 0.5rem 1rem;
 }
+.hacker-style-button-container.disabled {
+  color: rgba(253, 64, 62, 0.5019607843);
+  cursor: not-allowed;
+}
+.hacker-style-button-container.disabled .svg-bg {
+  fill: rgba(26, 26, 26, 0.5019607843);
+  stroke: rgba(84, 36, 36, 0.5019607843);
+}
 
 /*# sourceMappingURL=HackerStyleButton.module.css.map */
