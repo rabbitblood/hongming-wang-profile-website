@@ -12,7 +12,7 @@ export interface DialogueMessageProps {
 }
 
 export default function DialogueMessage(props: DialogueMessageProps) {
-  const timeBeforeShow = props.timeBeforeShow || 1000;
+  const timeBeforeShow = props.timeBeforeShow ?? 1000;
   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {

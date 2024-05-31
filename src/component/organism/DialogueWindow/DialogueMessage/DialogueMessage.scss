@@ -20,7 +20,7 @@ $messageBoarderRadius: 1rem;
 
     &.right {
       border-color: white;
-      text-align: right;
+      text-align: left;
       justify-self: end;
       align-self: flex-end;
       border-radius: $messageBoarderRadius $messageBoarderRadius 0

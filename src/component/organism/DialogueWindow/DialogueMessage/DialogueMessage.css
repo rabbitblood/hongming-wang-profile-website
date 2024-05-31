@@ -16,7 +16,7 @@
 }
 .message-container .message.right {
   border-color: white;
-  text-align: right;
+  text-align: left;
   justify-self: end;
   align-self: flex-end;
   border-radius: 1rem 1rem 0 1rem;

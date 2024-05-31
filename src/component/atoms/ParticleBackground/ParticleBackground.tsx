@@ -1,7 +1,7 @@
 "use client";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import whiteCircle from "@/assets/white-circle.svg";
+import whiteCircle from "@/assets/icons/white-circle.svg";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ParticleBackgroundProps {

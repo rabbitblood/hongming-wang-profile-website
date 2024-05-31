@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 2rem;
   height: 100vh;
+  max-height: 100vh;
 }
 #introduce-section .display-tabs-container {
   display: flex;
@@ -20,7 +21,9 @@
 }
 #introduce-section .introduce-content-container {
   margin: 0;
+  margin-bottom: 1rem;
   flex-grow: 1;
+  display: flex;
 }
 
 /*# sourceMappingURL=IntroduceSection.css.map */

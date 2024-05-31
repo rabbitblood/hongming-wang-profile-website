@@ -22,10 +22,12 @@ export default function DialogueWindow() {
           for new challenges and opportunities to learn and grow as a
           developer.`,
       position: "left",
+      timeBeforeShow: 0,
     },
     {
       content: `If you have any questions to ask, feel free to ask me!`,
       position: "left",
+      timeBeforeShow: 0,
     },
   ]);
   const [inputMessage, setInputMessage] = useState<string>("");
@@ -102,7 +104,7 @@ export default function DialogueWindow() {
     // get thread
     fetch("/api/hongming-gpt/new-thread").then((res) => {
       res.json().then((data) => {
-        console.log(data);
+        //console.log(data);
         setGPTThreadID(data);
       });
     });
@@ -122,17 +124,51 @@ export default function DialogueWindow() {
       </div>
       <div className="input-area">
         <HackerStyleInput
+          rounded
           onChange={(e) => {
             setInputMessage(e.target.value);
           }}
           onBlur={(e) => {
             setInputMessage(e.target.value);
           }}
-          placeholder="Ask me something! like 'tell me about yourself'"
+          placeholder="Ask me something!"
           value={inputMessage}
           disabled={!canInput}
+          additionalClass="gpt-input"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              canInput && handleSendMessageButton();
+            }
+
+            if (e.key === "ArrowUp") {
+              setInputMessage("What is your favorite sport?");
+            }
+
+            if (e.key === "ArrowDown") {
+              setInputMessage("What is your favorite animal?");
+            }
+
+            if (e.key === "ArrowLeft") {
+              setInputMessage("What is your favorite color?");
+            }
+
+            if (e.key === "ArrowRight") {
+              setInputMessage("What is your favorite food?");
+            }
+
+            if (e.key === "Escape") {
+              setInputMessage("");
+            }
+
+            if (e.key === "Tab") {
+              e.preventDefault();
+              setInputMessage("");
+            }
+          }}
         />
         <HackerStyleButton
+          marginx="extra"
+          additionalClass="send-message-button"
           onClick={() => {
             canInput && handleSendMessageButton();
           }}

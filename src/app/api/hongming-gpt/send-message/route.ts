@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
   const lastMessage = (await openai.beta.threads.messages.list(threadId))
     .data[0];
 
-  console.log(lastMessage);
+  //console.log(lastMessage);
 
   return NextResponse.json(lastMessage?.content);
 }
