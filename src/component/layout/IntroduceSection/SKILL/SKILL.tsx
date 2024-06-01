@@ -1,6 +1,57 @@
+import React from "react";
+import "./SKILL.css";
+import skillIcons from "@/assets/images/skill-icons";
+
 interface SKILLProps extends React.HTMLAttributes<HTMLDivElement> {
   hide?: boolean;
 }
+
+interface skill {
+  title: string;
+  icon: string;
+  desc: string;
+}
+
+const hardSkillList = [
+  {
+    title: "Full-Stack",
+    icon: skillIcons.fullStack.src,
+    desc: "React, Next.js, Three.js, WebGL, Webpack, Babel, HTML, CSS, SCSS",
+  },
+  {
+    title: "Agile",
+    icon: skillIcons.agile.src,
+    desc: "Scrum, Kanban, Jira, Trello, Slack",
+  },
+  {
+    title: "Automation",
+    icon: skillIcons.automation.src,
+    desc: "Jest, Mocha, Chai, Puppeteer, Selenium",
+  },
+];
+
+const softSkillList = [
+  {
+    title: "Communication",
+    icon: skillIcons.communication.src,
+    desc: "I have experience working in teams and communicating with clients.",
+  },
+  {
+    title: "Problem Solving",
+    icon: skillIcons.problemSolving.src,
+    desc: "I enjoy solving problems and finding creative solutions.",
+  },
+  {
+    title: "Adaptability",
+    icon: skillIcons.adaptability.src,
+    desc: "I am adaptable and able to learn new technologies quickly.",
+  },
+  {
+    title: "Time Management",
+    icon: skillIcons.timeManagement.src,
+    desc: "I am able to manage my time effectively and meet deadlines.",
+  },
+];
 
 export default function SKILL(props: SKILLProps) {
   return (
@@ -8,42 +59,24 @@ export default function SKILL(props: SKILLProps) {
       <div className="skill-container">
         <div className="skill-content">
           <h1 className="skill-title">SKILL</h1>
-          <div className="skill-list">
-            <div className="skill-item">
-              <h2 className="skill-item-title">Languages</h2>
-              <ul className="skill-item-list">
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>C#</li>
-                <li>Java</li>
-              </ul>
+          <div className="skill-group-container">
+            <h2 className="skill-group-title">Hard Skill</h2>
+            <div className="skill-group">
+              {hardSkillList.map((skill, index) => (
+                <div key={index} className="skill-container">
+                  <img className="skill-icon" src={skill.icon} alt="" />
+                  <h3 className="skill-name">{skill.title}</h3>
+                </div>
+              ))}
             </div>
-            <div className="skill-item">
-              <h2 className="skill-item-title">Frontend</h2>
-              <ul className="skill-item-list">
-                <li>React</li>
-                <li>Angular</li>
-                <li>Vue</li>
-                <li>HTML/CSS</li>
-              </ul>
-            </div>
-            <div className="skill-item">
-              <h2 className="skill-item-title">Backend</h2>
-              <ul className="skill-item-list">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>Flask</li>
-                <li>Spring Boot</li>
-              </ul>
-            </div>
-            <div className="skill-item">
-              <h2 className="skill-item-title">Game Development</h2>
-              <ul className="skill-item-list">
-                <li>Unity</li>
-                <li>Unreal Engine</li>
-                <li>Godot</li>
-                <li>Phaser</li>
-              </ul>
+            <h2 className="skill-group-title">Soft Skill</h2>
+            <div className="skill-group">
+              {softSkillList.map((skill, index) => (
+                <div key={index} className="skill-container">
+                  <img className="skill-icon" src={skill.icon} alt="" />
+                  <h3 className="skill-name">{skill.title}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>

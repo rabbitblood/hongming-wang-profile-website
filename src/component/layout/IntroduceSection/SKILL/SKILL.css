@@ -1,0 +1,64 @@
+#skill {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+}
+#skill .skill-container {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+}
+#skill .skill-container .skill-title {
+  font-size: 2rem;
+  line-height: 1rem;
+}
+#skill .skill-container .skill-content {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-areas: "main";
+  max-height: 100%;
+  height: 100%;
+  grid-template-rows: 3rem 1fr;
+}
+#skill .skill-container .skill-content .skill-group-title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+#skill .skill-container .skill-content .skill-group-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: calc(75vh - 3rem);
+  overflow-y: auto;
+}
+#skill .skill-container .skill-content .skill-group-container .skill-group {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+}
+@media screen and (min-width: 768px) {
+  #skill .skill-container .skill-content .skill-group-container .skill-group {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}
+#skill .skill-container .skill-content .skill-group-container .skill-group .skill-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#skill .skill-container .skill-content .skill-group-container .skill-group .skill-container:hover {
+  background-color: #e0e0e0;
+}
+#skill .skill-container .skill-content .skill-group-container .skill-group .skill-container .skill-name {
+  font-size: 0.5rem;
+}
+
+/*# sourceMappingURL=SKILL.css.map */
