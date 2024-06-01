@@ -10,11 +10,6 @@ export default function WebStack(props: WebStackProps) {
     <div className="web-stack" {...props}>
       <div className="web-stack-text">
         <h1 className="title">Web Development</h1>
-        <p>
-          I have been developing websites since 2019. I have experience in
-          developing websites with mostly React Next.js. I am prioritizing in
-          making websites with good user experience.
-        </p>
         <ul>
           <li>React</li>
           <li>Next.js</li>
