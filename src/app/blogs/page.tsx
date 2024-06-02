@@ -2,6 +2,8 @@ import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerSt
 import { builder } from "@builder.io/sdk";
 import Link from "next/link";
 
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
 export default async function Blogs() {
   const allPages = await builder.getAll("blog-page", {
     options: {
