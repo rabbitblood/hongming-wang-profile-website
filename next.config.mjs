@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 import path from "path";
+import BuilderDevTools from "@builder.io/dev-tools/next";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const nextConfig = {
+const nextConfig = BuilderDevTools()({
   webpack: (
     config,
     { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
@@ -22,12 +22,10 @@ const nextConfig = {
         },
       ],
     });
-
     config.resolve.alias["@src"] = __dirname + "/src";
-
     return config;
   },
   transpilePackages: ["three"],
-};
+});
 
 export default nextConfig;
