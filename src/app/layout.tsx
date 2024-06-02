@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import Header from "@/components/organism/Header/Header";
+import { builder } from "@builder.io/sdk";
+
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 const inter = Inter({ subsets: ["latin"] });
 

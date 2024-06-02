@@ -1,18 +1,28 @@
 import React from "react";
-import "./BlogId.css";
+import { builder } from "@builder.io/sdk";
+import { RenderBuilderContent } from "@/components/builder";
 
-interface BlogIdProps {
+interface PageProps {
   params: {
-    blogid: string;
+    blogid: string[];
   };
 }
 
-export default function BlogId({ params }: BlogIdProps) {
-  console.log(params);
+export default async function Page(props: PageProps) {
+  const content = await builder
+    .get("blog-page", {
+      userAttributes: {
+        urlPath: "/blogs/" + (props?.params?.blogid || ""),
+      },
+    })
+    .toPromise();
+
+  console.log(content);
+
   return (
-    <div className="blog-id-page">
-      <h1>BlogId</h1>
-      <p>Coming soon...</p>
-    </div>
+    <>
+      {/* Render the Builder page */}
+      <RenderBuilderContent content={content} model={"blog-page"} />
+    </>
   );
 }
