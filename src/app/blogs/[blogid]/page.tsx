@@ -23,6 +23,8 @@ export default async function Page(props: PageProps) {
   return (
     <HackerStyleContainer>
       {/* Render the Builder page */}
+      <h1>{content.data.title}</h1>
+      <p>{content.data.shortDesc}</p>
       <RenderBuilderContent content={content} model={"blog-page"} />
     </HackerStyleContainer>
   );
