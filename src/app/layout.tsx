@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
+import Header from "@/component/organism/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,39 +41,45 @@ export default function RootLayout({
   return (
     <html lang="en">
       {" "}
-      <div id="background-particle-effect">
-        <ParticleBackground
-          style={{
-            position: "fixed",
-            height: "100%",
-            width: "100%",
-            zIndex: -1,
-          }}
-          particleAmount={1000}
-          color="blue"
-        />{" "}
-        <ParticleBackground
-          style={{
-            position: "fixed",
-            height: "100%",
-            width: "100%",
-            zIndex: -1,
-          }}
-          particleAmount={1000}
-          color="red"
-        />{" "}
-        <ParticleBackground
-          style={{
-            position: "fixed",
-            height: "100%",
-            width: "100%",
-            zIndex: -1,
-          }}
-          particleAmount={1000}
-          color="white"
-        />
-      </div>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {" "}
+        <div id="background-particle-effect">
+          <ParticleBackground
+            style={{
+              position: "fixed",
+              height: "100%",
+              width: "100%",
+              zIndex: -1,
+            }}
+            particleAmount={1000}
+            color="blue"
+          />{" "}
+          <ParticleBackground
+            style={{
+              position: "fixed",
+              height: "100%",
+              width: "100%",
+              zIndex: -1,
+            }}
+            particleAmount={1000}
+            color="red"
+          />{" "}
+          <ParticleBackground
+            style={{
+              position: "fixed",
+              height: "100%",
+              width: "100%",
+              zIndex: -1,
+            }}
+            particleAmount={1000}
+            color="white"
+          />
+        </div>
+        <main>
+          <Header />
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

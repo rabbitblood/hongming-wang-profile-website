@@ -1,0 +1,13 @@
+.open-header-button-container {
+  position: absolute;
+  left: 0;
+  transform: rotate(-90deg) translate(calc(-50vh + 50%), -150%);
+  z-index: 2000;
+
+  .open-header {
+    .open-header-button {
+      fill: #000;
+      cursor: pointer;
+    }
+  }
+}

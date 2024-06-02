@@ -13,17 +13,15 @@ const My3dModel = dynamic(
 
 export default function Home() {
   return (
-    <main>
-      <div className="home-page">
-        <div className="banner">
-          <div className="text-section">
-            <h1 className="title">Hongming Wang</h1>
-            <h1 className="sub-title">Game/Web Dev</h1>
-          </div>
-          <My3dModel />
+    <div className="home-page">
+      <div className="banner">
+        <div className="text-section">
+          <h1 className="title">Hongming Wang</h1>
+          <h1 className="sub-title">Game/Web Dev</h1>
         </div>
-        <IntroduceSection />
+        <My3dModel />
       </div>
-    </main>
+      <IntroduceSection />
+    </div>
   );
 }
