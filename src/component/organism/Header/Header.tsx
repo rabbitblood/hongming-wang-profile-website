@@ -3,9 +3,15 @@ import OpenHeaderButton from "./OpenHeaderButton/OpenHeaderButton";
 import React from "react";
 import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import "./Header.css";
+import Link from "next/link";
+import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
 
 export default function Header() {
   const [isHeaderOpen, setIsHeaderOpen] = React.useState(false);
+
+  function handleClick() {
+    setIsHeaderOpen(!isHeaderOpen);
+  }
   return (
     <>
       <header className="header">
@@ -19,12 +25,12 @@ export default function Header() {
             }}
           />
           <nav className="nav">
-            <li className="nav-link">
-              <a href="/">Home</a>
-            </li>
-            <li className="nav-link">
-              <a href="/blogs">Blogs</a>
-            </li>
+            <Link href={"/"} className="nav-link" onClick={handleClick}>
+              <HackerStyleButton parentSize>Home</HackerStyleButton>
+            </Link>
+            <Link href={"/blogs"} className="nav-link" onClick={handleClick}>
+              <HackerStyleButton parentSize>Blogs</HackerStyleButton>
+            </Link>
           </nav>
         </HackerStyleContainer>
       </header>

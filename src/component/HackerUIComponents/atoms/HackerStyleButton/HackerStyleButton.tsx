@@ -63,6 +63,7 @@ export interface HackerStyleButtonProps
   additionalClass?: string;
   disabled?: boolean;
   active?: boolean;
+  parentSize?: boolean;
 }
 
 export default function HackerStyleButton({
@@ -73,6 +74,7 @@ export default function HackerStyleButton({
   active,
   additionalClass,
   disabled,
+  parentSize,
   ...props
 }: HackerStyleButtonProps) {
   if (!button_direction) button_direction = "normal";
@@ -85,7 +87,7 @@ export default function HackerStyleButton({
         style[`margin-${marginx}`]
       } ${style[bg]} ${active ? style["active"] : ""} ${additionalClass} ${
         disabled ? style["disabled"] : ""
-      }`}
+      } ${parentSize ? style["parent-size"] : ""}`}
       {...props}
     >
       <div className={style["button-content"]}>{children}</div>

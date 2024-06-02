@@ -6,6 +6,19 @@
   cursor: pointer;
   text-align: center;
 }
+.hacker-style-button-container.parent-size {
+  width: 100%;
+  height: 100%;
+}
+.hacker-style-button-container.parent-size .button-content {
+  width: 100%;
+  height: 100%;
+}
+.hacker-style-button-container.parent-size .svg-bg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
 .hacker-style-button-container.solid .svg-bg {
   fill: #542424;
   stroke: #fd403e;
