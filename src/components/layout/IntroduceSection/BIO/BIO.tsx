@@ -1,6 +1,6 @@
 import "./BIO.css";
 import Image from "next/image";
-import DialogueWindow from "@/component/organism/DialogueWindow/DialogueWindow";
+import DialogueWindow from "@/components/organism/DialogueWindow/DialogueWindow";
 import hongmingProtrait from "@/assets/images/HongmingPixelPortrait.webp";
 import mobileTopIcons from "@/assets/icons/mobile-top-right-icons.webp";
 

@@ -1,4 +1,4 @@
-import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
+import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 export default function Blogs() {
   return (
     <div className="blogs-page">

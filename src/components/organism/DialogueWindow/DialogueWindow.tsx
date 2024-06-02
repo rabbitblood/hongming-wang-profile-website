@@ -2,14 +2,14 @@
 
 import "./DialogueWindow.css";
 
-import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
+import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import DialogueMessage, {
   DialogueMessageProps,
 } from "./DialogueMessage/DialogueMessage";
-import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
-import HackerDropDown from "@/component/HackerUIComponents/molecules/HackerDropDown/HackerDropDown";
+import HackerStyleButton from "@/components/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
+import HackerDropDown from "@/components/HackerUIComponents/molecules/HackerDropDown/HackerDropDown";
 import { useEffect, useRef, useState } from "react";
-import HackerStyleInput from "@/component/HackerUIComponents/atoms/HackerStyleInput/HackerStyleInput";
+import HackerStyleInput from "@/components/HackerUIComponents/atoms/HackerStyleInput/HackerStyleInput";
 
 export default function DialogueWindow() {
   const messageContainerRef = useRef<HTMLDivElement>(null);

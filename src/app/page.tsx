@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import "./home.css";
-import IntroduceSection from "@/component/layout/IntroduceSection/IntroduceSection";
+import IntroduceSection from "@/components/layout/IntroduceSection/IntroduceSection";
 
 // three.js and react-three-fiber are not supported in server-side rendering
 
 const My3dModel = dynamic(
-  () => import("../component/atoms/My3dModel/My3dModel"),
+  () => import("../components/atoms/My3dModel/My3dModel"),
   {
     ssr: false,
   }

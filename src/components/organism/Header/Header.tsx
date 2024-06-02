@@ -1,10 +1,10 @@
 "use client";
 import OpenHeaderButton from "./OpenHeaderButton/OpenHeaderButton";
 import React from "react";
-import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
+import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import "./Header.css";
 import Link from "next/link";
-import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
+import HackerStyleButton from "@/components/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
 
 export default function Header() {
   const [isHeaderOpen, setIsHeaderOpen] = React.useState(false);

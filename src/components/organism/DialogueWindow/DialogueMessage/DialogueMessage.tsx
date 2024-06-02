@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./DialogueMessage.css";
-import HackerStyleContainer from "@/component/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
+import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import { TypeAnimation } from "react-type-animation";
 
 export interface DialogueMessageProps {

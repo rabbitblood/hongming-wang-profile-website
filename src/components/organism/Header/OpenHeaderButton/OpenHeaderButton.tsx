@@ -1,6 +1,6 @@
 import React from "react";
 import "./OpenHeaderButton.css";
-import HackerStyleButton from "@/component/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
+import HackerStyleButton from "@/components/HackerUIComponents/atoms/HackerStyleButton/HackerStyleButton";
 
 interface OpenHeaderButtonProps extends React.HTMLAttributes<HTMLDivElement> {}
 
