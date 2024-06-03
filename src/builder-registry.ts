@@ -37,17 +37,6 @@ Builder.registerComponent(withChildren(HackerStyleContainer), {
 
 Builder.registerComponent(withChildren(HackerCodeContainer), {
   name: "HackerCodeContainer",
-  defaultChildren: [
-    {
-      "@type": "@builder.io/sdk:Element",
-      component: {
-        name: "text",
-        options: {
-          text: "Code goes here...",
-        },
-      },
-    },
-  ],
   inputs: [
     {
       name: "attributes",
@@ -58,7 +47,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
     },
     {
       name: "children",
-      type: "string",
+      type: "longText",
       hideFromUI: true,
       meta: {
         ts: "ReactNode",
@@ -73,7 +62,7 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
   inputs: [
     {
       name: "children",
-      type: "string",
+      type: "longText",
       hideFromUI: false,
       meta: {
         ts: "ReactNode",
@@ -90,17 +79,6 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
     },
   ],
   noWrap: true,
-  defaultChildren: [
-    {
-      "@type": "@builder.io/sdk:Element",
-      component: {
-        name: "text",
-        options: {
-          text: "Heading goes here...",
-        },
-      },
-    },
-  ],
 });
 
 Builder.registerComponent(withChildren(HackerStyleParagraph), {
@@ -108,7 +86,7 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
   inputs: [
     {
       name: "children",
-      type: "string",
+      type: "longText",
       hideFromUI: false,
       meta: {
         ts: "ReactNode",
@@ -116,15 +94,4 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
     },
   ],
   noWrap: true,
-  defaultChildren: [
-    {
-      "@type": "@builder.io/sdk:Element",
-      component: {
-        name: "text",
-        options: {
-          text: "Paragraph goes here...",
-        },
-      },
-    },
-  ],
 });
