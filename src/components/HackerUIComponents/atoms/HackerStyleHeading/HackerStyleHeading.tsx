@@ -5,7 +5,7 @@ interface HackerStyleHeadingProps {
   children: React.ReactNode;
   className?: string;
   headingNumber?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  attributes: any;
+  attributes?: any;
 }
 
 export default function HackerStyleHeading(props: HackerStyleHeadingProps) {

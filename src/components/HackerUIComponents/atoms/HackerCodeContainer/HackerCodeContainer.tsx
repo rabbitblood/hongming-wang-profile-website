@@ -5,7 +5,7 @@ import copyIcon from "@/assets/icons/copy-icon.png";
 interface HackerCodeContainerProps
   extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  attributes: any;
+  attributes?: any;
 }
 
 export default function HackerCodeContainer(props: HackerCodeContainerProps) {

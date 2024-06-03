@@ -2,7 +2,7 @@ import React from "react";
 import "./HackerStyleParagraph.css";
 
 interface HackerStyleParagraphProps {
-  attributes: any;
+  attributes?: any;
   children: React.ReactNode;
 }
 

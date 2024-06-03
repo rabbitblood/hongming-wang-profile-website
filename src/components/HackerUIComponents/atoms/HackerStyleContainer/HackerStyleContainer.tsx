@@ -6,7 +6,7 @@ interface HackerStyleContainerProps
   parentSize?: boolean;
   additionalClass?: string;
   children: React.ReactNode;
-  attributes: any;
+  attributes?: any;
 }
 
 export default function HackerStyleContainer({
