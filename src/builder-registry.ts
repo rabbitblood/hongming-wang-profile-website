@@ -45,7 +45,17 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
       meta: {
         ts: "ReactNode",
       },
-      defaultValue: "Code",
+    },
+  ],
+  defaultChildren: [
+    {
+      "@type": "@builder.io/sdk:Element",
+      component: {
+        name: "longText",
+        options: {
+          text: "Code goes here...",
+        },
+      },
     },
   ],
   noWrap: true,
@@ -61,7 +71,6 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
       meta: {
         ts: "ReactNode",
       },
-      defaultValue: "Heading",
     },
     {
       name: "className",
@@ -74,6 +83,17 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
     },
   ],
   noWrap: true,
+  defaultChildren: [
+    {
+      "@type": "@builder.io/sdk:Element",
+      component: {
+        name: "text",
+        options: {
+          text: "Heading goes here...",
+        },
+      },
+    },
+  ],
 });
 
 Builder.registerComponent(withChildren(HackerStyleParagraph), {
@@ -86,8 +106,18 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
       meta: {
         ts: "ReactNode",
       },
-      defaultValue: "Paragraph",
     },
   ],
   noWrap: true,
+  defaultChildren: [
+    {
+      "@type": "@builder.io/sdk:Element",
+      component: {
+        name: "text",
+        options: {
+          text: "Paragraph goes here...",
+        },
+      },
+    },
+  ],
 });
