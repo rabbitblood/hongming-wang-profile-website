@@ -45,6 +45,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
       meta: {
         ts: "ReactNode",
       },
+      defaultValue: "Code",
     },
   ],
   noWrap: true,
@@ -60,6 +61,7 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
       meta: {
         ts: "ReactNode",
       },
+      defaultValue: "Heading",
     },
     {
       name: "className",
@@ -84,6 +86,7 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
       meta: {
         ts: "ReactNode",
       },
+      defaultValue: "Paragraph",
     },
   ],
   noWrap: true,
