@@ -5,6 +5,7 @@ import copyIcon from "@/assets/icons/copy-icon.png";
 interface HackerCodeContainerProps
   extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
+  attributes: any;
 }
 
 export default function HackerCodeContainer(props: HackerCodeContainerProps) {
@@ -14,7 +15,7 @@ export default function HackerCodeContainer(props: HackerCodeContainerProps) {
     navigator.clipboard.writeText(props.children.toString());
   };
   return (
-    <code className="hacker-code-container">
+    <code className="hacker-code-container" {...props.attributes}>
       <img
         className="copy-code-button"
         src={copyIcon.src}

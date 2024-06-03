@@ -6,6 +6,7 @@ interface HackerStyleContainerProps
   parentSize?: boolean;
   additionalClass?: string;
   children: React.ReactNode;
+  attributes: any;
 }
 
 export default function HackerStyleContainer({
@@ -21,6 +22,7 @@ export default function HackerStyleContainer({
 
   return (
     <div
+      {...props.attributes}
       className={`hacker-style-container ${bg} ${additionalClass} ${
         parentSize ? "parent-size" : ""
       }`}
