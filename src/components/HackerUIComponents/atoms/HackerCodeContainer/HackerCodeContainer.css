@@ -1,0 +1,48 @@
+.hacker-code-container {
+  position: relative;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  padding-right: 3rem;
+  background-color: rgba(26, 26, 26, 0.5019607843);
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 800px;
+}
+.hacker-code-container.parent-size {
+  width: 100%;
+  height: 100%;
+}
+.hacker-code-container.transparent {
+  background-color: transparent;
+}
+.hacker-code-container.half-transparent {
+  background-color: rgba(26, 26, 26, 0.5019607843);
+}
+.hacker-code-container.solid {
+  background-color: #1a1a1a;
+}
+.hacker-code-container .copy-code-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: rgba(26, 26, 26, 0.5019607843);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0.5);
+}
+.hacker-code-container .copy-code-button:hover {
+  filter: brightness(1);
+}
+.hacker-code-container .copy-code-button:active {
+  filter: brightness(0.7);
+}
+
+/*# sourceMappingURL=HackerCodeContainer.css.map */
