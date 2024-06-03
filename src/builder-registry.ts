@@ -4,6 +4,7 @@ import HackerCodeContainer from "./components/HackerUIComponents/atoms/HackerCod
 import HackerStyleContainer from "./components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import HackerStyleHeading from "./components/HackerUIComponents/atoms/HackerStyleHeading/HackerStyleHeading";
 import HackerStyleParagraph from "./components/HackerUIComponents/atoms/HackerStyleParagraph/HackerStyleParagraph";
+import HackerLink from "./components/HackerUIComponents/atoms/HackerLink/HackerLink";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -91,6 +92,25 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
       meta: {
         ts: "ReactNode",
       },
+    },
+  ],
+  noWrap: true,
+});
+
+Builder.registerComponent(withChildren(HackerLink), {
+  name: "HackerLink",
+  inputs: [
+    {
+      name: "children",
+      type: "longText",
+      hideFromUI: false,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "href",
+      type: "string",
     },
   ],
   noWrap: true,
