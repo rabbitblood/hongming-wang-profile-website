@@ -41,7 +41,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
     {
       "@type": "@builder.io/sdk:Element",
       component: {
-        name: "longText",
+        name: "text",
         options: {
           text: "Code goes here...",
         },
@@ -94,7 +94,7 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
     {
       "@type": "@builder.io/sdk:Element",
       component: {
-        name: "longText",
+        name: "text",
         options: {
           text: "Heading goes here...",
         },
@@ -120,7 +120,7 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
     {
       "@type": "@builder.io/sdk:Element",
       component: {
-        name: "longText",
+        name: "text",
         options: {
           text: "Paragraph goes here...",
         },
