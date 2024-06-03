@@ -22,7 +22,7 @@ Builder.registerComponent(withChildren(HackerStyleContainer), {
     {
       name: "children",
       type: "string",
-      hideFromUI: true,
+      hideFromUI: false,
       meta: {
         ts: "ReactNode",
       },
@@ -41,7 +41,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
     {
       name: "children",
       type: "string",
-      hideFromUI: true,
+      hideFromUI: false,
       meta: {
         ts: "ReactNode",
       },
@@ -57,7 +57,7 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
     {
       name: "children",
       type: "string",
-      hideFromUI: true,
+      hideFromUI: false,
       meta: {
         ts: "ReactNode",
       },
@@ -82,7 +82,7 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
     {
       name: "children",
       type: "string",
-      hideFromUI: true,
+      hideFromUI: false,
       meta: {
         ts: "ReactNode",
       },
