@@ -48,7 +48,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
     {
       name: "children",
       type: "longText",
-      hideFromUI: true,
+      hideFromUI: false,
       meta: {
         ts: "ReactNode",
       },
