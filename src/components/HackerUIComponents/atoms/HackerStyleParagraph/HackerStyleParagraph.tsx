@@ -8,7 +8,7 @@ interface HackerStyleParagraphProps {
 
 export default function HackerStyleParagraph(props: HackerStyleParagraphProps) {
   return (
-    <p className="hacker-paragraph" {...props.attributes}>
+    <p {...props.attributes} className="hacker-paragraph">
       {props.children}
     </p>
   );

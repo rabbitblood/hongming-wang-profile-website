@@ -9,15 +9,11 @@ interface HackerStyleHeadingProps {
 }
 
 export default function HackerStyleHeading(props: HackerStyleHeadingProps) {
-  if (!props.headingNumber) {
-    props.headingNumber = "h1";
-  }
-
   return React.createElement(
-    props.headingNumber,
+    props.headingNumber ?? "h1",
     {
-      className: `${props.className} ${"hacker-" + props.headingNumber}`,
       ...props.attributes,
+      className: `${props.className} ${"hacker-" + props.headingNumber}`,
     },
     props.children
   );

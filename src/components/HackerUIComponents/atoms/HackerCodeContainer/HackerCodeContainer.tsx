@@ -15,7 +15,7 @@ export default function HackerCodeContainer(props: HackerCodeContainerProps) {
     navigator.clipboard.writeText(props.children.toString());
   };
   return (
-    <code className="hacker-code-container" {...props.attributes}>
+    <code {...props.attributes} className="hacker-code-container">
       <img
         className="copy-code-button"
         src={copyIcon.src}

@@ -37,16 +37,6 @@ Builder.registerComponent(withChildren(HackerStyleContainer), {
 
 Builder.registerComponent(withChildren(HackerCodeContainer), {
   name: "HackerCodeContainer",
-  inputs: [
-    {
-      name: "children",
-      type: "string",
-      hideFromUI: false,
-      meta: {
-        ts: "ReactNode",
-      },
-    },
-  ],
   defaultChildren: [
     {
       "@type": "@builder.io/sdk:Element",
@@ -55,6 +45,23 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
         options: {
           text: "Code goes here...",
         },
+      },
+    },
+  ],
+  inputs: [
+    {
+      name: "attributes",
+      type: "string",
+      meta: {
+        ts: "any",
+      },
+    },
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
       },
     },
   ],
