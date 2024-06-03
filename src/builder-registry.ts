@@ -32,6 +32,7 @@ Builder.registerComponent(withChildren(HackerStyleContainer), {
       type: "boolean",
     },
   ],
+  noWrap: true,
 });
 
 Builder.registerComponent(withChildren(HackerCodeContainer), {
@@ -46,6 +47,7 @@ Builder.registerComponent(withChildren(HackerCodeContainer), {
       },
     },
   ],
+  noWrap: true,
 });
 
 Builder.registerComponent(withChildren(HackerStyleHeading), {
@@ -69,6 +71,7 @@ Builder.registerComponent(withChildren(HackerStyleHeading), {
       enum: ["h1", "h2", "h3", "h4", "h5", "h6"],
     },
   ],
+  noWrap: true,
 });
 
 Builder.registerComponent(withChildren(HackerStyleParagraph), {
@@ -83,4 +86,5 @@ Builder.registerComponent(withChildren(HackerStyleParagraph), {
       },
     },
   ],
+  noWrap: true,
 });
