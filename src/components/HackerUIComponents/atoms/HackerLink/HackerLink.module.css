@@ -1,0 +1,14 @@
+.hacker-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.hacker-link:hover {
+  color: rgb(255, 255, 255);
+}
+.hacker-link:active {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/*# sourceMappingURL=HackerLink.module.css.map */

@@ -26,7 +26,7 @@ export default function Header() {
           />
           <nav className="nav">
             <Link href={"/"} className="nav-link" onClick={handleClick}>
-              <HackerStyleButton parentSize>Home</HackerStyleButton>
+              <HackerStyleButton parentSize>Hongming Wang</HackerStyleButton>
             </Link>
             <Link href={"/blogs"} className="nav-link" onClick={handleClick}>
               <HackerStyleButton parentSize>Blogs</HackerStyleButton>

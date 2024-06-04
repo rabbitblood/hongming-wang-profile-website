@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./HackerLink.css";
+import style from "./HackerLink.module.css";
 
 export interface HackerLinkProps {
   href: string;
@@ -9,7 +9,11 @@ export interface HackerLinkProps {
 
 export default function HackerLink(props: HackerLinkProps) {
   return (
-    <Link {...props.attributes} href={props.href}>
+    <Link
+      {...props.attributes}
+      className={`${style["hacker-link"]}`}
+      href={props.href}
+    >
       {props.children}
     </Link>
   );
