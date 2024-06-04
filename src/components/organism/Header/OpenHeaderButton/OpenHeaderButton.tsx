@@ -20,6 +20,7 @@ export default function OpenHeaderButton(props: OpenHeaderButtonProps) {
   const animateValues = {
     initial: { opacity: 0.2 },
     show: { opacity: 1 },
+    hover: { opacity: 1 },
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -34,6 +35,13 @@ export default function OpenHeaderButton(props: OpenHeaderButtonProps) {
     <motion.div
       initial={scrollY?.get() > 0 ? animateValues.show : animateValues.initial}
       transition={{ duration: 0.1, delay: 0 }}
+      whileHover={animateValues.hover}
+      onHoverEnd={() =>
+        animate(
+          scope.current,
+          scrollY?.get() > 0 ? animateValues.show : animateValues.initial
+        )
+      }
       ref={scope}
       className="open-header-button-container"
       onClick={props.onClick}
