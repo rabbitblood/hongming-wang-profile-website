@@ -5,7 +5,7 @@
   max-height: 100vh;
 }
 #introduce-section .section-inner-container {
-  height: 100%;
+  height: 100svh;
   display: flex;
   flex-direction: column;
 }
