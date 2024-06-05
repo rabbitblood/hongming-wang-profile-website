@@ -11,5 +11,8 @@
     flex-shrink: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    height: 100svh;
+    max-height: 100svh;
+    margin: calc(100lvh - 100svh) 0;
   }
 }
