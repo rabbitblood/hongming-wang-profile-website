@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Header from "@/components/organism/Header/Header";
 import Footer from "@/components/organism/Footer/Footer";
 import { builder } from "@builder.io/sdk";
+import { createContext } from "react";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -85,11 +86,7 @@ export default function RootLayout({
             color="white"
           />
         </div>
-        <main>
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );

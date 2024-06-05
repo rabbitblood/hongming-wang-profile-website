@@ -173,6 +173,7 @@ export default function DialogueWindow() {
             canInput && handleSendMessageButton();
           }}
           disabled={!canInput}
+          bg="solid"
         >
           Send Message
         </HackerStyleButton>

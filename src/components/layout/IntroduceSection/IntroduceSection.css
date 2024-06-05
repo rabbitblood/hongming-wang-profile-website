@@ -1,25 +1,29 @@
 #introduce-section {
-  display: flex;
-  flex-direction: column;
+  margin: 2rem 0;
   padding: 2rem;
   height: 100vh;
   max-height: 100vh;
 }
-#introduce-section .display-tabs-container {
+#introduce-section .section-inner-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#introduce-section .section-inner-container .display-tabs-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  #introduce-section .display-tabs-container {
+  #introduce-section .section-inner-container .display-tabs-container {
     padding-left: 0.5rem;
     justify-content: start;
   }
 }
-#introduce-section .display-tabs-container .display-tab-button {
+#introduce-section .section-inner-container .display-tabs-container .display-tab-button {
   margin-bottom: 0;
 }
-#introduce-section .introduce-content-container {
+#introduce-section .section-inner-container .introduce-content-container {
   margin: 0;
   margin-bottom: 1rem;
   flex-grow: 1;

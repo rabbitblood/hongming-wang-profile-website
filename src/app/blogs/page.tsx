@@ -1,6 +1,5 @@
 import HackerStyleContainer from "@/components/HackerUIComponents/atoms/HackerStyleContainer/HackerStyleContainer";
 import { builder } from "@builder.io/sdk";
-import Link from "next/link";
 import BlogCard from "@/components/molecule/BlogCard/BlogCard";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);

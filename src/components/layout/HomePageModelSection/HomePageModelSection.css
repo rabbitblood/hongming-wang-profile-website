@@ -1,0 +1,34 @@
+.banner {
+  position: relative;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.banner .text-section {
+  text-align: center;
+  position: absolute;
+  z-index: 5;
+}
+@media screen and (min-width: 769px) {
+  .banner .text-section {
+    left: 0;
+    text-align: left;
+    padding-left: 10%;
+  }
+}
+.banner .text-section .title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.banner .text-section .sub-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=HomePageModelSection.css.map */
