@@ -1,11 +1,11 @@
 #introduce-section {
   margin: 2rem 0;
   padding: 2rem;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100svh;
+  max-height: 100svh;
 }
 #introduce-section .section-inner-container {
-  height: 100svh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
