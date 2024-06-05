@@ -11,28 +11,31 @@ export default function Footer() {
       <div className="footer-content">
         <HackerStyleContainer>
           <div className="social-medias">
-            <a href="https://www.linkedin.com/in/hongming-wang-dev/">
+            <a
+              href="https://www.linkedin.com/in/hongming-wang-dev/"
+              target="_blank"
+            >
               <img
                 className="social-medias-icon"
                 src="https://img.icons8.com/?size=100&id=3869&format=png"
                 alt="linkedin"
               />
             </a>
-            <a href="https://github.com/rabbitblood">
+            <a href="https://github.com/rabbitblood" target="_blank">
               <img
                 className="social-medias-icon"
                 src="https://img.icons8.com/?size=100&id=nXgKLCSNhAWG&format=png"
                 alt="github"
               />
             </a>
-            <a href="https://x.com/wang_hong_ming">
+            <a href="https://x.com/wang_hong_ming" target="_blank">
               <img
                 className="social-medias-icon"
                 src={xIcon.src}
                 alt="twitterx--v1"
               />
             </a>
-            <a href="https://t.me/+17788611008">
+            <a href="https://t.me/+17788611008" target="_blank">
               <img
                 className="social-medias-icon"
                 src="https://img.icons8.com/?size=100&id=CYghN6YMk6Za&format=png"
