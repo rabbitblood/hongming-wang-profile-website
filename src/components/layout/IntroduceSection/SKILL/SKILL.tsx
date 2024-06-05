@@ -59,24 +59,26 @@ export default function SKILL(props: SKILLProps) {
       <div className="skill-container">
         <div className="skill-content">
           <h1 className="skill-title">SKILL</h1>
-          <div className="skill-group-container">
-            <h2 className="skill-group-title">Hard Skill</h2>
-            <div className="skill-group">
-              {hardSkillList.map((skill, index) => (
-                <div key={index} className="skill-container">
-                  <img className="skill-icon" src={skill.icon} alt="" />
-                  <h3 className="skill-name">{skill.title}</h3>
-                </div>
-              ))}
-            </div>
-            <h2 className="skill-group-title">Soft Skill</h2>
-            <div className="skill-group">
-              {softSkillList.map((skill, index) => (
-                <div key={index} className="skill-container">
-                  <img className="skill-icon" src={skill.icon} alt="" />
-                  <h3 className="skill-name">{skill.title}</h3>
-                </div>
-              ))}
+          <div className="skill-group-container-wrap">
+            <div className="skill-group-container">
+              <h2 className="skill-group-title">Hard Skill</h2>
+              <div className="skill-group">
+                {hardSkillList.map((skill, index) => (
+                  <div key={index} className="skill-container">
+                    <img className="skill-icon" src={skill.icon} alt="" />
+                    <h3 className="skill-name">{skill.title}</h3>
+                  </div>
+                ))}
+              </div>
+              <h2 className="skill-group-title">Soft Skill</h2>
+              <div className="skill-group">
+                {softSkillList.map((skill, index) => (
+                  <div key={index} className="skill-container">
+                    <img className="skill-icon" src={skill.icon} alt="" />
+                    <h3 className="skill-name">{skill.title}</h3>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

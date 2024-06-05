@@ -4,17 +4,19 @@
 
   .section-inner-container {
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas: "introduce-content-container";
+    grid-template-columns: 1fr;
+    grid-template-rows: 10svh calc(90svh - 4rem);
 
     .display-tabs-container {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: end;
 
       @media screen and (min-width: 768px) {
-        padding-left: 0.5rem;
         justify-content: start;
+        padding-left: 0.5rem;
       }
 
       .display-tab-button {

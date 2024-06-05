@@ -2,12 +2,11 @@
   position: relative;
   flex-grow: 1;
   width: 100%;
+  height: 100%;
 
   .skill-container {
     position: relative;
     height: 100%;
-    display: grid;
-    grid-template-rows: 3rem 1fr;
 
     .skill-title {
       font-size: 2rem;
@@ -21,7 +20,7 @@
       grid-template-areas: "main";
       max-height: 100%;
       height: 100%;
-      grid-template-rows: 3rem 1fr;
+      flex-grow: 1;
 
       .skill-group-title {
         text-align: left;
@@ -29,41 +28,46 @@
         margin: 1rem;
       }
 
-      .skill-group-container {
+      .skill-group-container-wrap {
         position: relative;
-        height: 100%;
         width: 100%;
-        min-height: calc(75vh - 3rem);
-        overflow-y: auto;
+        max-height: 100%;
+        overflow-y: scroll;
 
-        .skill-group {
-          display: grid;
-          justify-content: center;
-          align-items: center;
-          gap: 0.5rem;
-          grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+        .skill-group-container {
+          position: relative;
+          width: 100%;
+          overflow-y: auto;
 
-          @media screen and (min-width: 768px) {
-            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-          }
-
-          .skill-container {
-            display: flex;
+          .skill-group {
+            display: grid;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            transition: 0.5s;
-            cursor: pointer;
+            gap: 0.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
 
-            &:hover {
-              background-color: #e0e0e0;
+            @media screen and (min-width: 768px) {
+              grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
             }
 
-            .skill-icon {
-            }
+            .skill-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              transition: 0.5s;
+              cursor: pointer;
 
-            .skill-name {
-              font-size: 0.5rem;
+              &:hover {
+                background-color: #e0e0e0;
+              }
+
+              .skill-icon {
+              }
+
+              .skill-name {
+                font-size: 0.5rem;
+              }
             }
           }
         }
