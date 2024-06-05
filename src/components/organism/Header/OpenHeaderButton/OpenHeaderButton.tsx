@@ -7,7 +7,6 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { init } from "next/dist/compiled/webpack/webpack";
 
 interface OpenHeaderButtonProps {
   onClick: () => void;
