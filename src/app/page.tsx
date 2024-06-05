@@ -7,12 +7,14 @@ import Header from "@/components/organism/Header/Header";
 
 export default function Home() {
   return (
-    <div className="home-page">
+    <>
       <Header />
-      <HomePageModelSection />
-      <IntroduceSection />
-      <ProjectsSection />
-      <Footer />
-    </div>
+      <div className="home-page">
+        <HomePageModelSection />
+        <IntroduceSection />
+        <ProjectsSection />
+        <Footer />
+      </div>
+    </>
   );
 }

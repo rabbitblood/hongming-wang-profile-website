@@ -15,4 +15,8 @@
     max-height: 100svh;
     margin-bottom: calc(100lvh - 100svh);
   }
+
+  .footer {
+    flex-shrink: unset;
+  }
 }

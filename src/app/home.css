@@ -15,5 +15,8 @@
   max-height: 100svh;
   margin-bottom: calc(100lvh - 100svh);
 }
+.home-page .footer {
+  flex-shrink: unset;
+}
 
 /*# sourceMappingURL=home.css.map */
