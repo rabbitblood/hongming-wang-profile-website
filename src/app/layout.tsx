@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   Unity, Unreal Engine, React, and Node.js. I'm always looking
   for new challenges and opportunities to learn and grow as a
   developer`,
+  creator: "Hongming Wang",
+  authors: [
+    {
+      name: "Hongming Wang",
+      url: "https://hongming-wang.com",
+    },
+  ],
+  keywords: ["Hongming Wang", "Hongming", "Game Developer", "Web Developer"],
 };
 
 export const viewport: Viewport = {
