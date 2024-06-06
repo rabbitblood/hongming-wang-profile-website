@@ -17,6 +17,7 @@
 }
 .home-page .footer {
   flex-shrink: unset;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=home.css.map */
